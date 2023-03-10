@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+            body{background-color: beige;}
+            h1{color: brown;text-align: center;}
+            h2{color: black;text-align: center;}
+            hr{padding: 2px;background-color: brown;}
+            form #reg{background-color:brown;width: 100;border-radius: 5px;color: white;}
+            form input {width: 30%;}
+
+        </style>
+         <script type="text/javascript">
+            function validate()
+            {
+                var name=document.myform.name.value;
+                var phone=document.myform.num.value;
+                if(name==null||name=="")
+                {
+                    alert("Name cannot be empty")
+                }
+                else if(phone==null||phone.length<10)
+                {
+                    alert("Enter a valid phone number")
+                }
+                else{
+                    display();
+                }
+
+            }
+
+            function display()
+            {
+                var user = document.myform.name.value;
+                var eid = document.myform.mail.value;
+                var dob = document.myform.date.value;
+                var pno = document.myform.num.value;
+
+                document.writeln("Name: "+ user+"" );
+                document.writeln("<br>","Email: "+ eid);
+                document.writeln("DOB: "+ dob);
+                document.writeln("Phone: "+ pno);
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>SPORTS CLUB REGISTRATION</h1><hr>
+        <h2>SIGNUP FORM</h2>
+        
+        <form name = "myform">
+        <center>
+            <h4>NAME</h4>
+            <input type="text" placeholder="Enter name" name="name"><br></br>
+            <h4>Email</h4>
+            <input type="email" placeholder="Enter Email" name="mail"> 
+            <h4>DOB</h4>
+            <input type="date" placeholder="Enter DOB" name="date"><br></br>
+            <h4>PHONE NUMBER</h4>
+            <input type="number" placeholder="Enter phone number" name="num"><br></br>
+            <input type="button" value="Register!" id="reg" onclick="validate()">
+            <p>Already a user? <a href="">login</a></p>
+        </center>
+        </form>
+
+        
+    </body>
+</html>
